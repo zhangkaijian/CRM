@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.dao.CustomerMapper">
+    <select id="getAllCustomer" resultType="com.sxt.bean.Customer">
+            select * from t_customer where 1=1
+            <if test="field=='customername' and key!=null">
+                and name like concat('%',#{key },'%')
+            </if>
+            <if test="field=='customerid' and key!=null">
+                and id like concat('%',#{key },'%')
+            </if>
+    </select>
+
+    <insert id="addcustomer">
+        insert into t_customer(name,phone,industry,companysize,des)values (#{name},#{phone},#{industry},#{companysize},#{des})
+    </insert>
+
+    <update id="updatecustomer">
+        update t_customer set name=#{name},phone=#{phone},industry=#{industry},companysize=#{companysize},des=#{des}  where id=#{id} ;
+    </update>
+
+    <delete id="deletecustomer">
+        delete  from t_customer where id = #{id}
+    </delete>
+
+    <select id="getUser" resultType="com.sxt.bean.User">
+        select * from t_user where username = #{username}
+    </select>
+
+    <select id="getAllUser" resultType="com.sxt.bean.User">
+        select * from t_user
+    </select>
+
+    <insert id="addUser">
+        insert into t_user(username,password,roles)values (#{username},#{password},#{roles})
+    </insert>
+</mapper>
