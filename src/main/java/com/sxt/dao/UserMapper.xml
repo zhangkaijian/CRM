@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.dao.UserMapper">
+    <select id="getUser" resultType="com.sxt.bean.User">
+        select * from t_user where username = #{username}
+    </select>
+
+    <select id="getAllUser" resultType="com.sxt.bean.User">
+        select * from t_user
+    </select>
+
+    <insert id="addUser">
+        insert into t_user(username,password,roles)values (#{username},#{password},#{roles})
+    </insert>
+</mapper>
