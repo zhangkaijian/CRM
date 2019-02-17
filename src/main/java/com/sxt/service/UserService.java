@@ -1,28 +1,14 @@
 package com.sxt.service;
 
 import com.sxt.bean.User;
-import com.sxt.dao.UserMapper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class UserService {
+public interface UserService {
 
-    @Autowired
-    UserMapper userMapper;
+    User getUser(String username);
 
-    public User getUser(String username){
-        return userMapper.getUser(username);
-    }
+    List<User> getAllUser();
 
-    public List<User> getAllUser(){
-        return userMapper.getAllUser();
-    }
-
-    public int addUser(User user){
-        return userMapper.addUser(user);
-    }
-
+    int addUser(User user);
 }

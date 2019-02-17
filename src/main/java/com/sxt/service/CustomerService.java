@@ -1,35 +1,16 @@
 package com.sxt.service;
 
 import com.sxt.bean.Customer;
-import com.sxt.bean.User;
-import com.sxt.dao.CustomerMapper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.zip.ZipEntry;
 
-@Service
-public class CustomerService {
+public interface CustomerService  {
 
-    @Autowired
-    CustomerMapper customerMapper;
+    List<Customer> getAllCustomer(String  field, String key);
 
-    public List<Customer> getAllCustomer(String  field,String key){
-        return customerMapper.getAllCustomer(field,key);
-    }
+    int addcustomer(Customer customer);
 
-    public int addcustomer(Customer customer){
-        return customerMapper.addcustomer(customer);
-    }
+    int updatecustomer(Customer customer);
 
-    public int updatecustomer(Customer customer){
-        return customerMapper.updatecustomer(customer);
-    }
-
-    public int deletecustomer(Integer id){
-        return customerMapper.deletecustomer(id);
-    }
-
-
+    int deletecustomer(Integer id);
 }

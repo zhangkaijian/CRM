@@ -1,8 +1,8 @@
 package com.sxt.controller;
 
 import com.sxt.bean.Customer;
-import com.sxt.bean.User;
 import com.sxt.service.CustomerService;
+import com.sxt.service.Impl.CustomerServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,13 +14,13 @@ import java.util.List;
 public class CustomerController {
 
     @Autowired
-    CustomerService customerService;
+    CustomerService customerServiceImpl;
 
     //查询所有客户
     @PostMapping("/getAllCustomer")
     @ResponseBody
     public List<Customer> getAllCustomer(String field,String key){
-        List<Customer> queryAll = customerService.getAllCustomer(field,key);
+        List<Customer> queryAll = customerServiceImpl.getAllCustomer(field,key);
         System.out.println(queryAll);
         System.out.println(field);
         System.out.println(key);
@@ -32,7 +32,7 @@ public class CustomerController {
     @ResponseBody
     public int addcustomer(Customer customer){
         System.out.println(customer);
-        int num = customerService.addcustomer(customer);
+        int num = customerServiceImpl.addcustomer(customer);
         System.out.println(num);
         return num;
     }
@@ -42,7 +42,7 @@ public class CustomerController {
     @ResponseBody
     public int updatecustomer(Customer customer){
         System.out.println(customer);
-        int num = customerService.updatecustomer(customer);
+        int num = customerServiceImpl.updatecustomer(customer);
         System.out.println(num);
         return num;
     }
@@ -52,7 +52,7 @@ public class CustomerController {
     @ResponseBody
     public int deletecustomer(Integer id){
         System.out.println(id);
-        int num = customerService.deletecustomer(id);
+        int num = customerServiceImpl.deletecustomer(id);
         System.out.println(num);
         return num;
     }

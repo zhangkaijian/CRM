@@ -1,7 +1,6 @@
 package com.sxt.dao;
 
 import com.sxt.bean.Customer;
-import com.sxt.bean.User;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
