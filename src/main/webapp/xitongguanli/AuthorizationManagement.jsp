@@ -180,7 +180,12 @@
             </tr>
             <tr>
                 <td>用户权限:</td>
-                <td><input class="easyui-textbox" type="text" name="roles" data-options="required:true,missingMessage:'行业信息不能为空'"></input></td>
+                <td>
+                    <select class="easyui-combobox" name="roles" style="width:150px" panelHeight=140>
+                        <option value="guest">游客</option>
+                        <option value="superadmin">超级管理员</option>
+                     </select>
+                </td>
             </tr>
         </table>
     </form>

@@ -5,6 +5,7 @@
        xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
+    <!--扫描除了controller以外的包-->
     <context:component-scan base-package="com.sxt" use-default-filters="true">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
@@ -24,6 +25,7 @@
         <aop:advisor advice-ref="txAdvice" pointcut-ref="pc"/>
     </aop:config>
 
+    <!--数据库配置-->
     <bean class="com.alibaba.druid.pool.DruidDataSource" id="dataSource">
         <property name="url" value="${db.url}"/>
         <property name="username" value="${db.username}"/>
@@ -34,6 +36,7 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
+    <!--mybatis配置-->
     <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="mapperLocations">
@@ -52,10 +55,10 @@
     <!--shiro配置-->
     <bean class="com.sxt.realm.MyRealm" id="myRealm"/>
     <bean class="org.apache.shiro.web.mgt.DefaultWebSecurityManager" id="securityManager">
-        <!--<property name="sessionManager" ref="sessionManager"/>-->
         <property name="realm" ref="myRealm"/>
     </bean>
 
+    <!--shiro认证和权限配置-->
     <bean class="org.apache.shiro.spring.web.ShiroFilterFactoryBean" id="shiroFilter">
         <property name="securityManager" ref="securityManager"/>
         <property name="loginUrl" value="/index.jsp"/>
