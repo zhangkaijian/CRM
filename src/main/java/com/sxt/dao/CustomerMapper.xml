@@ -25,15 +25,4 @@
         delete  from t_customer where id = #{id}
     </delete>
 
-    <select id="getUser" resultType="com.sxt.bean.User">
-        select * from t_user where username = #{username}
-    </select>
-
-    <select id="getAllUser" resultType="com.sxt.bean.User">
-        select * from t_user
-    </select>
-
-    <insert id="addUser">
-        insert into t_user(username,password,roles)values (#{username},#{password},#{roles})
-    </insert>
 </mapper>

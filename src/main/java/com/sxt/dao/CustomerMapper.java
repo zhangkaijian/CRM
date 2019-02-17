@@ -16,9 +16,5 @@ public interface CustomerMapper {
 
     int deletecustomer(Integer id);
 
-    User getUser(String username);
 
-    List<User> getAllUser();
-
-    int addUser(User user);
 }

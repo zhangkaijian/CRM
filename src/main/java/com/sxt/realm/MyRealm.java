@@ -2,6 +2,7 @@ package com.sxt.realm;
 
 import com.sxt.bean.User;
 import com.sxt.service.CustomerService;
+import com.sxt.service.UserService;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
@@ -13,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class MyRealm extends AuthorizingRealm {
 
     @Autowired
-    CustomerService customerService;
+    UserService userService;
 
     /**
      * 认证信息
@@ -29,7 +30,7 @@ public class MyRealm extends AuthorizingRealm {
         String username = ((UsernamePasswordToken) token).getUsername();
         char[] psw = ((UsernamePasswordToken) token).getPassword();
         String password = new String(psw);
-        User user = customerService.getUser(username);
+        User user = userService.getUser(username);
         if (user==null){
             throw new UnknownAccountException();
         }
@@ -47,7 +48,7 @@ public class MyRealm extends AuthorizingRealm {
      */
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
         String username = (String)principals.getPrimaryPrincipal();
-        User user = customerService.getUser(username);
+        User user = userService.getUser(username);
         System.out.println(user);
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
         authorizationInfo.addRole(user.getRoles());

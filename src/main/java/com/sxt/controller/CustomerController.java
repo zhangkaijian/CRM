@@ -57,21 +57,4 @@ public class CustomerController {
         return num;
     }
 
-    //查询所有用户
-    @PostMapping("getAllUser")
-    @ResponseBody
-    public List<User> getAllUser(){
-        List<User> allUser = customerService.getAllUser();
-
-        return allUser;
-    }
-
-    @PostMapping("addUser")
-    @ResponseBody
-    public int addUser(User user){
-        System.out.println(user);
-        int num = customerService.addUser(user);
-        System.out.println(num);
-        return num;
-    }
 }

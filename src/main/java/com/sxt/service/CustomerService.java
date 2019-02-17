@@ -31,15 +31,5 @@ public class CustomerService {
         return customerMapper.deletecustomer(id);
     }
 
-    public User getUser(String username){
-        return customerMapper.getUser(username);
-    }
 
-    public List<User> getAllUser(){
-        return customerMapper.getAllUser();
-    }
-
-    public int addUser(User user){
-        return customerMapper.addUser(user);
-    }
 }
