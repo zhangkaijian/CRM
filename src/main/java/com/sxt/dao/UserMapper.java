@@ -8,7 +8,7 @@ public interface UserMapper {
 
     User getUser(String username);
 
-    List<User> getAllUser();
+    List<User> getAllUser(Integer page, Integer rows);
 
     int addUser(User user);
 }

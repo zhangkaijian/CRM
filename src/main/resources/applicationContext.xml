@@ -47,8 +47,9 @@
             </list>
         </property>
         <property name="typeAliasesPackage" value="com.sxt.bean"/>
-        <!--<property name="configLocation" value="classpath:mybatis-conf.xml"/>-->
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
     </bean>
+    <!--扫描dao下的包-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.sxt.dao"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryBean"/>

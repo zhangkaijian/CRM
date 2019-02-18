@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class UserController {
@@ -16,12 +17,11 @@ public class UserController {
     @Autowired
     UserService userServiceImpl;
 
-    //查询所有用户
+    //用插件分页查询所有用户
     @PostMapping("getAllUser")
     @ResponseBody
-    public List<User> getAllUser(){
-        List<User> allUser = userServiceImpl.getAllUser();
-
+    public Map<String,Object> getAllUser(Integer page, Integer rows){
+        Map<String,Object> allUser = userServiceImpl.getAllUser(page, rows);
         return allUser;
     }
 

@@ -2,13 +2,12 @@ package com.sxt.controller;
 
 import com.sxt.bean.Customer;
 import com.sxt.service.CustomerService;
-import com.sxt.service.Impl.CustomerServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.List;
+import java.util.Map;
 
 @Controller
 public class CustomerController {
@@ -16,15 +15,12 @@ public class CustomerController {
     @Autowired
     CustomerService customerServiceImpl;
 
-    //查询所有客户
+    //分页+条件查询所有客户
     @PostMapping("/getAllCustomer")
     @ResponseBody
-    public List<Customer> getAllCustomer(String field,String key){
-        List<Customer> queryAll = customerServiceImpl.getAllCustomer(field,key);
-        System.out.println(queryAll);
-        System.out.println(field);
-        System.out.println(key);
-        return queryAll;
+    public Map<String,Object> getAllCustomer(String field, String key, Integer page, Integer rows){
+        Map<String, Object> Customer = customerServiceImpl.getAllCustomer(field, key, page, rows);
+        return Customer;
     }
 
     //添加客户
