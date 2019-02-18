@@ -21,51 +21,85 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 <body class="easyui-layout">
 	<div data-options="region:'north',title:'用户管理',split:true"
-		style="background:url(img/background.png);height: 100px;">
+		style="background: #0d8ddb;height: 100px;">
 		首页
 	</div>
-	<div data-options="region:'south',title:'South Title',split:true"
-		style="height: 100px;">
-	</div>
+	<%--<div data-options="region:'south',title:'South Title',split:true"--%>
+		<%--style="height: 100px;">--%>
+	<%--</div>--%>
 	<div data-options="region:'west',title:'导航栏',split:true"
 		style="width: 200px;">
-		<ul id="tt" class="easyui-tree">
-			<li><span>系统管理</span>
-				<ul>
+		<%--<ul id="tt2" class="easyui-tree">--%>
+			<%--<li><span>系统管理</span>--%>
+				<%--<ul>--%>
+					<%--<li>--%>
+						<%--<a style="text-decoration: none; color:#000000" href="javascript:void(o)" onclick="goPage1($(this).text())">--%>
+							<%--<span>授权管理</span></a>--%>
+					<%--</li>--%>
+				<%--</ul>--%>
+			<%--</li>--%>
+			<%--<li><span>客户资料</span>--%>
+				<%--<ul>--%>
+					<%--<li>--%>
+						<%--<a style="text-decoration: none; color:#000000" href="javascript:void(o)" onclick="goPage2($(this).text())">--%>
+						<%--<span>客户资料管理</span></a>--%>
+					<%--</li>--%>
+					<%--<li>--%>
+						<%--<a style="text-decoration: none; color:#000000" href="javascript:void(o)" onclick="goPage3($(this).text())">--%>
+						<%--<span>邮件短信关怀</span></a>--%>
+					<%--</li>--%>
+				<%--</ul>--%>
+			<%--</li>--%>
+			<%--<li><span>联系人资料</span>--%>
+				<%--<ul>--%>
+					<%--<li>--%>
+						<%--<a style="text-decoration: none; color:#000000" href="javascript:void(o)" onclick="goPage4($(this).text())">--%>
+						<%--<span>添加联系人</span></a>--%>
+					<%--</li>--%>
+					<%--<li>--%>
+						<%--<a style="text-decoration: none; color:#000000" href="javascript:void(o)" onclick="goPage5($(this).text())">--%>
+						<%--<span>联系人管理</span></a>--%>
+					<%--<li>--%>
+						<%--<a style="text-decoration: none; color:#000000" href="javascript:void(o)" onclick="goPage6($(this).text())">--%>
+						<%--<span>业主信息</span></a>--%>
+					<%--</li>--%>
+				<%--</ul>--%>
+			<%--</li>--%>
+		<%--</ul>--%>
+		<div class="easyui-accordion"  style="width:199px;" fit="true" border="false">
+			<div title="系统管理" data-options="iconCls:'icon-system'" style="overflow:auto;padding:10px;">
+				<ul class="easyui-tree">
 					<li>
 						<a style="text-decoration: none; color:#000000" href="javascript:void(o)" onclick="goPage1($(this).text())">
 							<span>授权管理</span></a>
 					</li>
 				</ul>
-			</li>
-			<li><span>客户资料</span>
-				<ul>
+			</div>
+			<div title="客户资料" style="padding:10px;">
+				<ul class="easyui-tree">
 					<li>
 						<a style="text-decoration: none; color:#000000" href="javascript:void(o)" onclick="goPage2($(this).text())">
-						<span>客户资料管理</span></a>
+							<span>客户资料管理</span></a>
 					</li>
 					<li>
 						<a style="text-decoration: none; color:#000000" href="javascript:void(o)" onclick="goPage3($(this).text())">
-						<span>邮件短信关怀</span></a>
+							<span>邮件短信关怀</span></a>
 					</li>
 				</ul>
-			</li>
-			<li><span>联系人资料</span>
-				<ul>
+			</div>
+			<div title="联系人资料" style="padding:10px;">
+				<ul class="easyui-tree">
 					<li>
 						<a style="text-decoration: none; color:#000000" href="javascript:void(o)" onclick="goPage4($(this).text())">
-						<span>添加联系人</span></a>
+							<span>添加联系人</span></a>
 					</li>
 					<li>
 						<a style="text-decoration: none; color:#000000" href="javascript:void(o)" onclick="goPage5($(this).text())">
-						<span>联系人管理</span></a>
-					<li>
-						<a style="text-decoration: none; color:#000000" href="javascript:void(o)" onclick="goPage6($(this).text())">
-						<span>业主信息</span></a>
+							<span>联系人管理</span></a>
 					</li>
 				</ul>
-			</li>
-		</ul>
+			</div>
+		</div>
 	</div>
 	<div data-options="region:'center',border:false" style="padding: 0px; background: #eee;">
 		<div id="tab" class="easyui-tabs" fit="true">

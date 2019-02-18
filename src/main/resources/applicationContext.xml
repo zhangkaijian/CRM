@@ -10,8 +10,10 @@
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
+    <!--扫描db文件-->
     <context:property-placeholder location="classpath:db.properties"/>
 
+    <!--aop配置-->
     <tx:advice id="txAdvice" transaction-manager="transactionManager">
         <tx:attributes>
             <tx:method name="add*"/>
