@@ -10,8 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <base href="<%=basePath%>">
 <meta charset="UTF-8">
 	<title>登陆界面</title>
-	<link rel="stylesheet" type="text/css"
-		href="easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
 	<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
 	<script type="text/javascript" src="easyui/jquery.min.js"></script>
 	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
@@ -23,10 +22,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div style="padding: 10px 60px 20px 60px">
 				<form action="/doLogin" id="ff" method="post">
 					<table cellpadding="5">
-<!-- 					    <lable for="proCompany">物业公司</lable>
-                       <input type="radio" name="signType" id="proCompany" value="proCompany" />
-                       <label for="owner">业主登录</label>
-                       <input type="radio" name="signType" id="owner" value="owner" /><br /> -->
 						<tr>
 							<td>账号:</td>
 							<td><input class="easyui-textbox" type="text" name="username"
@@ -37,13 +32,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<td><input class="easyui-textbox" type="password" name="password"
 								data-options="required:false"></input></td>
 						</tr>
-						<%--<input type="submit" value="提交1">--%>
 					</table>
 				</form>
 				<div style="text-align: center; padding: 5px">
 					<a href="javascript:void(0)" class="easyui-linkbutton"onclick="submitForm()">登录</a>
 					<a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearForm()">清空</a>
-					<!--  <input type="button" name="Submit" value="业主入口" onclick="window.open('yezhuguanli/login.jsp');">-->
 				</div>
 			</div>
 		</div>

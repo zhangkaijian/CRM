@@ -66,7 +66,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 	<div data-options="region:'center',border:false" style="padding: 0px; background: #eee;">
 		<div id="tab" class="easyui-tabs" fit="true">
-			<div title="首页" style="padding: 20px; display: none;">
+			<div title="首页" data-options="iconCls:'icon-home'" style="padding: 20px; display: none;">
 				<div>
 					<div>
 						<%
@@ -97,42 +97,42 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		function goPage1(name) {
 			$('#tab').tabs('add',{
 				title:name,
-				content:'<iframe src="xitongguanli/AuthorizationManagement.jsp" width="100%" height="100%"></iframe>',
+				content:'<iframe src="xitongguanli/AuthorizationManagement.jsp" width="100%" height="100%" style="border-width: 0px;"></iframe>',
 				closable:true
 			});
 		}
 		function goPage2(name) {
 			$('#tab').tabs('add',{
 			    title:name,
-			    content:'<iframe src="kehuziliao/CustomerManagement.jsp" width="100%" height="100%"></iframe>',
+			    content:'<iframe src="kehuziliao/CustomerManagement.jsp" width="100%" height="100%" style="border-width: 0px;"></iframe>',
 			    closable:true
 			});
 		}
-		function goPage3(name) {
+		function goPage3(name) {-
 			$('#tab').tabs('add',{
 			    title:name,
-			    content:'<iframe src="kehuziliao/Message.jsp" width="100%" height="100%"></iframe>',
+			    content:'<iframe src="kehuziliao/Message.jsp" width="100%" height="100%" style="border-width: 0px;"></iframe>',
 			    closable:true
 			});
 		}
 		function goPage4(name) {
 			$('#tab').tabs('add',{
 			    title:name,
-			    content:'<iframe src="lianxirenziliao/AddContacts.jsp" width="100%" height="100%"></iframe>',
+			    content:'<iframe src="lianxirenziliao/AddContacts.jsp" width="100%" height="100%" style="border-width: 0px;"></iframe>',
 			    closable:true
 			});
 		}
 		function goPage5(name) {
 			$('#tab').tabs('add',{
 			    title:name,
-			    content:'<iframe src="lianxirenziliao/ContactsManagement.jsp" width="100%" height="100%"></iframe>',
+			    content:'<iframe src="lianxirenziliao/ContactsManagement.jsp" width="100%" height="100%" style="border-width: 0px;"></iframe>',
 			    closable:true
 			});
 		}
 		function goPage6(name) {
 			$('#tab').tabs('add',{
 			    title:name,
-			    content:'<iframe src="lianxirenziliao/proMessage.jsp" width="100%" height="100%"></iframe>',
+			    content:'<iframe src="lianxirenziliao/proMessage.jsp" width="100%" height="100%" style="border-width: 0px;"></iframe>',
 			    closable:true
 			});
 		}
